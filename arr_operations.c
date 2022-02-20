@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 // Traversal
 void display(int ptr[], int n)
 {
@@ -54,16 +55,44 @@ void Linear_Search(int arr[], int size, int element)
         }
     }
 }
+
+int binary_search(int arr[], int size, int element)
+{
+    int low, mid, high;
+    low = 0;
+    mid = (low + high) / 2;
+    high = size - 1;
+    while (low <= high)
+    {
+        if (element == arr[mid])
+        {
+            return mid;
+        }
+        if (element > arr[mid])
+        {
+            low = mid + 1;
+            mid = (low + high) / 2;
+        }
+        else
+        {
+            high = mid - 1;
+            mid = (low + high) / 2;
+        }
+    }
+    return -1;
+}
 int main()
 {
-    int arr[100] = {7, 25, 3, 1, 33};
-    int size = 5;
-    Linear_Search(arr, size, 3);
-    IndesxInsertion(arr, size, 100, 3, 5);
-    size += 1;
-    display(arr, size);
-    Deletion(arr, size, 2);
-    size -= 1;
-    display(arr, size);
+    int arr[100] = {2, 4, 8, 9, 12, 16, 25};
+    int search = binary_search(arr, 7, 16);
+    printf("%d", search);
+    // int size = 5;
+    // Linear_Search(arr, size, 3);
+    // IndesxInsertion(arr, size, 100, 3, 5);
+    // size += 1;
+    // display(arr, size);
+    // Deletion(arr, size, 2);
+    // size -= 1;
+    // display(arr, size);
     return 0;
 }
