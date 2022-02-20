@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 // Traversal
 void display(int ptr[], int n)
 {
@@ -13,7 +14,8 @@ int IndesxInsertion(int arr[], int size, int capacity, int index, int elememnt)
 {
     if (size >= capacity)
     {
-        return 1;
+        printf("\nInsertion can not be perform as size limit already exceeded -- :(\n");
+        exit(0);
     }
     for (int i = size - 1; i >= index; i--)
     {
@@ -21,6 +23,7 @@ int IndesxInsertion(int arr[], int size, int capacity, int index, int elememnt)
     }
 
     arr[index] = elememnt;
+    printf("\nInsertion has been done without any error -- :)\n");
 }
 
 int main()
