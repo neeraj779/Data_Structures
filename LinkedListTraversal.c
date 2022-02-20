@@ -32,7 +32,7 @@ int main()
     head->data = 7;
     head->next = second;
 
-    // assiging values and address of second object
+    // assiging values and address o f second object
     second->data = 3;
     second->next = third;
 
