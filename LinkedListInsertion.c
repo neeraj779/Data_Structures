@@ -11,11 +11,19 @@ void LinkedListTrraversal(struct Node *n_ptr)
 {
     while (n_ptr != NULL)
     {
-        printf("%d ", n_ptr->data);
+        printf("Elemnt : %d\n", n_ptr->data);
         n_ptr = n_ptr->next;
     }
+    printf("\n");
 }
 
+struct Node *InsertiomInFirst(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->next = head;
+    ptr->data = data;
+    return ptr;
+}
 int main()
 {
     // creating three objects of Struct Node type
@@ -28,10 +36,7 @@ int main()
     head = (struct Node *)malloc(sizeof(struct Node));
     second = (struct Node *)malloc(sizeof(struct Node));
     third = (struct Node *)malloc(sizeof(struct Node));
-    fourth  = (struct Node *)malloc(sizeof(struct Node));
-
-
-
+    fourth = (struct Node *)malloc(sizeof(struct Node));
 
     // assiging values and address of head object
     head->data = 7;
@@ -46,10 +51,12 @@ int main()
     third->next = fourth;
 
     // assiging values and address of third object
-    fourth->data = 33333333;
+    fourth->data = 72;
     fourth->next = NULL;
-    
+
+    LinkedListTrraversal(head);
+
+    head = InsertiomInFirst(head, 99);
     LinkedListTrraversal(head);
     return 0;
 }
-
