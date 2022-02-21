@@ -56,6 +56,13 @@ void InsertAtLast(struct Node *head, int data)
     ptr->next = NULL;
 }
 
+void InsertAfterNode(struct Node *node, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->data = data;
+    ptr->next = node->next;
+    node->next = ptr;
+}
 int main()
 {
     // creating three objects of Struct Node type
@@ -98,6 +105,10 @@ int main()
 
     // traversing after insertion at last
     InsertAtLast(head, 200);
+    LinkedListTrraversal(head);
+
+    // traversing after insertion after node
+    InsertAfterNode(third, 63428768);
     LinkedListTrraversal(head);
     return 0;
 }
