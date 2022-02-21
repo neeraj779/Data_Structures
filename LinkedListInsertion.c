@@ -100,7 +100,7 @@ int main()
     LinkedListTrraversal(head);
 
     // traversing after insertion in between
-    InsertInBetween(head, 2, 100);
+    InsertInBetween(head, 2, 77);
     LinkedListTrraversal(head);
 
     // traversing after insertion at last
@@ -108,7 +108,7 @@ int main()
     LinkedListTrraversal(head);
 
     // traversing after insertion after node
-    InsertAfterNode(third, 63428768);
+    InsertAfterNode(third, 108);
     LinkedListTrraversal(head);
     return 0;
 }

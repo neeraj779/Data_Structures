@@ -5,7 +5,7 @@ struct Node
 {
     int data;
     struct Node *next;
-};
+};  
 
 void LinkedListTrraversal(struct Node *n_ptr)
 {
@@ -52,4 +52,3 @@ int main()
     LinkedListTrraversal(head);
     return 0;
 }
-
