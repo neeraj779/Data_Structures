@@ -17,13 +17,45 @@ void LinkedListTrraversal(struct Node *n_ptr)
     printf("\n");
 }
 
-struct Node *InsertiomInFirst(struct Node *head, int data)
+struct Node *InsertAtFirst(struct Node *head, int data)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
-    ptr->next = head;
     ptr->data = data;
+    ptr->next = head;
     return ptr;
 }
+
+void InsertInBetween(struct Node *head, int index, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->data = data;
+    int i = 0;
+    struct Node *p = head;
+    while (i != index - 1)
+    {
+        p = p->next;
+        i++;
+    }
+
+    ptr->next = p->next;
+    p->next = ptr;
+}
+
+void InsertAtLast(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    ptr->data = data;
+    int i = 0;
+    struct Node *p = head;
+    while (p->next != NULL)
+    {
+        p = p->next;
+        i++;
+    }
+    p->next = ptr;
+    ptr->next = NULL;
+}
+
 int main()
 {
     // creating three objects of Struct Node type
@@ -50,13 +82,22 @@ int main()
     third->data = 25;
     third->next = fourth;
 
-    // assiging values and address of third object
+    // assiging values and address of fourth object
     fourth->data = 72;
     fourth->next = NULL;
 
+    // travesing before insertion
+    LinkedListTrraversal(head);
+    // traversing after insertion at firts
+    head = InsertAtFirst(head, 99);
     LinkedListTrraversal(head);
 
-    head = InsertiomInFirst(head, 99);
+    // traversing after insertion in between
+    InsertInBetween(head, 2, 100);
+    LinkedListTrraversal(head);
+
+    // traversing after insertion at last
+    InsertAtLast(head, 200);
     LinkedListTrraversal(head);
     return 0;
 }
