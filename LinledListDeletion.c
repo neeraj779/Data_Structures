@@ -105,18 +105,18 @@ int main()
     fourth->data = 33;
     fourth->next = NULL;
 
-    LinkedListTrraversal(head);
-    // traversing linked list after Deltion at first
-    head = DeletionAtFirst(head);
-    LinkedListTrraversal(head);
+    // LinkedListTrraversal(head);
+    // // traversing linked list after Deltion at first
+    // head = DeletionAtFirst(head);
+    // LinkedListTrraversal(head);
 
-    // trvaersing linked list after deletion at index
-    DeletionAtIndex(head, 2);
-    LinkedListTrraversal(head);
+    // // trvaersing linked list after deletion at index
+    // DeletionAtIndex(head, 2);
+    // LinkedListTrraversal(head);
 
-    // trvaersing linked list after deletion at end
-    DeletionAtEnd(head);
-    LinkedListTrraversal(head);
+    // // trvaersing linked list after deletion at end
+    // DeletionAtEnd(head);
+    // LinkedListTrraversal(head);
 
     // traversing linked list after index of particulat value
     DeletionAtGivenValue(head, 25);
