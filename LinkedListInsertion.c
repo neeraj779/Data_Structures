@@ -45,12 +45,10 @@ void InsertAtLast(struct Node *head, int data)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     ptr->data = data;
-    int i = 0;
     struct Node *p = head;
     while (p->next != NULL)
     {
         p = p->next;
-        i++;
     }
     p->next = ptr;
     ptr->next = NULL;
